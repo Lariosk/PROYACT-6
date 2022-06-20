@@ -1,30 +1,45 @@
+//LLaves de API de la nasa 
 const URL_API_NASA_APOD = "https://api.nasa.gov/planetary/apod?";
 const MI_API_KEY = "vSHL0IuZA474bAXNAFnDf5NFoGCrIgKhara7dY0S";
 let queDia = 16;
 let queMes = 6;
 let queAno = 1995;
+
 let html = null;
+
 let arrayMes = ['0','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
 $(document).ready(function()
 {
     llenarDias();
     llenarMeses();
+
     llenarAnos();
 });
 
 function llenarDias()
 {
     html = '';
+    
     $('#selectDia > option').remove();
+    
     html += '<option value="0">Dia</option>';
+    
     for (dia=1; dia <= 31; dia++) {
+    
         html+= `<option value="${dia}">${dia}</option>`
+    
     }
+    
     $('#selectDia').append(html);
 }
 
+
+
+
 function llenarMeses()
+
+
 {
     html = '';
     $('#selectMes > option').remove();
